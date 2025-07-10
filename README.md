@@ -45,35 +45,8 @@ Embora o número total de óbitos tenha aumentado moderadamente, o aumento dos �
 
 ---
 
-## Previsão com Regressão Linear
-
-Foi aplicado um modelo de regressão linear simples para prever a tendência dos óbitos por câncer até o ano de 2030.
-
-```python
-from sklearn.linear_model import LinearRegression
-import numpy as np
-import matplotlib.pyplot as plt
-
-# Preparação dos dados
-X = df[['ANO']]
-y = df['OBITO_CANCER']
-
-# Treinamento do modelo
-modelo = LinearRegression()
-modelo.fit(X, y)
-
-# Previsão até 2030
-anos_futuros = np.arange(df['ANO'].min(), 2031).reshape(-1, 1)
-previsoes = modelo.predict(anos_futuros)
-
-# Visualização
-plt.figure(figsize=(12, 6))
-plt.plot(df['ANO'], df['OBITO_CANCER'], label='Dados Reais', marker='o')
-plt.plot(anos_futuros, previsoes, label='Previsão Linear (até 2030)', linestyle='--', color='red')
-plt.title('Previsão de Óbitos por Câncer no Brasil até 2030')
-plt.xlabel('Ano')
-plt.ylabel('Óbitos por Câncer')
-plt.legend()
-plt.grid(True)
-plt.tight_layout()
-plt.show()
+Contato
+Qualquer dúvida ou sugestão, entre em contato:
+Rafael dos Santos Silva
+Email: 06rafael.santoss@gmail.com
+GitHub: https://github.com/Rafael-ss-12
