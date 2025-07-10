@@ -1,1 +1,79 @@
-# analise_mortalidade_cancer
+# Análise da Mortalidade por Câncer no Brasil (1979–2023)
+
+## Objetivo
+
+Analisar a evolução dos óbitos causados por câncer no Brasil entre os anos de 1979 e 2023, utilizando dados oficiais do DATASUS. Além disso, aplicar uma regressão linear para prever a tendência dos óbitos por câncer até 2030.
+
+---
+
+## Fonte dos Dados
+
+Os dados foram extraídos do **SIM - Sistema de Informações sobre Mortalidade (DATASUS)**, disponível em [http://tabnet.datasus.gov.br](http://tabnet.datasus.gov.br).
+
+As variáveis analisadas são:
+
+- `ANO`: Ano da observação  
+- `OBITO_TOTAL`: Total de óbitos por todas as causas  
+- `OBITO_CANCER`: Óbitos causados por câncer  
+- `PERCENTUAL`: Percentual dos óbitos por câncer em relação ao total
+
+---
+
+## Análise Exploratória
+
+### Evolução dos óbitos por câncer (1979–2023)
+
+Observa-se um crescimento consistente no número absoluto de óbitos por câncer ao longo dos anos. Este aumento pode ser atribuído ao envelhecimento da população, maior detecção e mudanças nos hábitos de vida.
+
+*Gráfico 1: Óbitos por Câncer ao longo do tempo*
+
+---
+
+### Participação do câncer no total de óbitos
+
+A proporção de óbitos por câncer em relação ao total de mortes dobrou aproximadamente neste período, indicando que o câncer tem se tornado uma das principais causas de morte no Brasil.
+
+*Gráfico 2: Percentual de óbitos por câncer sobre o total*
+
+---
+
+### Comparação entre total de óbitos e óbitos por câncer
+
+Embora o número total de óbitos tenha aumentado moderadamente, o aumento dos óbitos por câncer é mais acentuado, ressaltando a importância do câncer nas políticas públicas de saúde.
+
+*Gráfico 3: Total de óbitos vs. Óbitos por câncer*
+
+---
+
+## Previsão com Regressão Linear
+
+Foi aplicado um modelo de regressão linear simples para prever a tendência dos óbitos por câncer até o ano de 2030.
+
+```python
+from sklearn.linear_model import LinearRegression
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Preparação dos dados
+X = df[['ANO']]
+y = df['OBITO_CANCER']
+
+# Treinamento do modelo
+modelo = LinearRegression()
+modelo.fit(X, y)
+
+# Previsão até 2030
+anos_futuros = np.arange(df['ANO'].min(), 2031).reshape(-1, 1)
+previsoes = modelo.predict(anos_futuros)
+
+# Visualização
+plt.figure(figsize=(12, 6))
+plt.plot(df['ANO'], df['OBITO_CANCER'], label='Dados Reais', marker='o')
+plt.plot(anos_futuros, previsoes, label='Previsão Linear (até 2030)', linestyle='--', color='red')
+plt.title('Previsão de Óbitos por Câncer no Brasil até 2030')
+plt.xlabel('Ano')
+plt.ylabel('Óbitos por Câncer')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
