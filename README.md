@@ -50,3 +50,49 @@ Qualquer dúvida ou sugestão, entre em contato:
 Rafael dos Santos Silva
 Email: 06rafael.santoss@gmail.com
 GitHub: https://github.com/Rafael-ss-12
+
+
+
+
+___________________________________________________________________________________________________________________________
+
+
+
+
+# Analysis of Cancer Mortality in Brazil (1979–2023)
+
+## Objective  
+Analyze the evolution of cancer-related deaths in Brazil between 1979 and 2023, using official data from DATASUS. Additionally, apply linear regression to predict the trend of cancer deaths up to 2030.
+
+## Data Source  
+The data were extracted from SIM - Mortality Information System (DATASUS), available at [http://tabnet.datasus.gov.br](http://tabnet.datasus.gov.br).
+
+The analyzed variables are:  
+- **YEAR:** Year of observation  
+- **TOTAL_DEATHS:** Total deaths from all causes  
+- **CANCER_DEATHS:** Deaths caused by cancer  
+- **PERCENTAGE:** Percentage of cancer deaths relative to the total  
+
+## Exploratory Analysis  
+
+### Evolution of cancer deaths (1979–2023)  
+There is a consistent increase in the absolute number of cancer deaths over the years. This rise can be attributed to population aging, improved detection, and changes in lifestyle habits.
+
+**Chart 1:** Cancer deaths over time  
+
+### Cancer's share of total deaths  
+The proportion of cancer deaths relative to total deaths has approximately doubled in this period, indicating that cancer has become one of the leading causes of death in Brazil.
+
+**Chart 2:** Percentage of cancer deaths over total deaths  
+
+### Comparison between total deaths and cancer deaths  
+Although the total number of deaths has increased moderately, the rise in cancer deaths is more pronounced, highlighting the importance of cancer in public health policies.
+
+**Chart 3:** Total deaths vs. Cancer deaths  
+
+## Contact  
+For any questions or suggestions, please contact:  
+**Rafael dos Santos Silva**  
+Email: [06rafael.santoss@gmail.com](mailto:06rafael.santoss@gmail.com)  
+GitHub: [https://github.com/Rafael-ss-12](https://github.com/Rafael-ss-12)
+
